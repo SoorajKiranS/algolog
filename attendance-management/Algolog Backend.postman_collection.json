@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "71994a13-f674-48ee-97bf-c415a30748d6",
+		"name": "Algolog Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27981137"
+	},
+	"item": [
+		{
+			"name": "register Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestId\": \"req-001\",\r\n  \"sourceSystem\": \"Algolog\",\r\n  \"timeStamp\": \"2025-05-16T09:00:00\",\r\n  \"payLoad\": [\r\n    {\r\n      \"username\": \"srj\",\r\n      \"password\": \"admin123\",\r\n      \"role\": \"ADMIN\",\r\n      \"email\": \"admin@algolog.com\",\r\n      \"mobile\": \"97444651214\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8848/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8848",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcmoiLCJpYXQiOjE3NDc4MTk1MzQsImV4cCI6MTc0NzkwNTkzNH0.rkuQNniB4s__EtKQT0bijXWGPzupVOVKBFdiyDkggysSnryVT-TyuZRGHejQmb-QYFI9YssRP75NIbREgtbW6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"lal\",\r\n    \"password\": \"emp@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8848/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8848",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register EMPLOYEE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestId\": \"req-001\",\r\n  \"sourceSystem\": \"Algolog\",\r\n  \"timeStamp\": \"2025-05-16T09:00:00\",\r\n  \"payLoad\": [\r\n    {\r\n      \"username\": \"lal\",\r\n      \"password\": \"emp@123\",\r\n      \"role\": \"EMPLOYEE\",\r\n      \"email\": \"admin@algolog.com\",\r\n      \"mobile\": \"97444651214\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8848/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8848",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "punchIN",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYWwiLCJpYXQiOjE3NDc4MjMzODgsImV4cCI6MTc0NzkwOTc4OH0.9zVoQL8j4hHy82_DVcypMkMLwawC0ZSx1q4Jiqmw4C1MpCqZhGEyA9SJ4vVJI06i0KzRm4_h4rQVRvAPkfuBlQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestId\": \"req-001\",\r\n  \"sourceSystem\": \"Algolog\",\r\n  \"timeStamp\": \"2025-05-16T09:00:00\",\r\n  \"payLoad\": [\r\n    {\r\n      \"workMode\": \"work from home\",\r\n      \"reason\": \"sick\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8848/api/attendance/punch-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8848",
+					"path": [
+						"api",
+						"attendance",
+						"punch-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "punchOut",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYWwiLCJpYXQiOjE3NDc4MjMzODgsImV4cCI6MTc0NzkwOTc4OH0.9zVoQL8j4hHy82_DVcypMkMLwawC0ZSx1q4Jiqmw4C1MpCqZhGEyA9SJ4vVJI06i0KzRm4_h4rQVRvAPkfuBlQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8848/api/attendance/punch-out",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8848",
+					"path": [
+						"api",
+						"attendance",
+						"punch-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "punchOut Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcmoiLCJpYXQiOjE3NDc4MjA2NjIsImV4cCI6MTc0NzkwNzA2Mn0.Rhr7j9IFtpTB4u80bLRqaZVfegbUXPl41GnBrypYdH1IJQHRhcdoB4iQUTLfU9UDQrNMkyOa0I_CvxRRKfKNgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8848/api/attendance/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8848",
+					"path": [
+						"api",
+						"attendance",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
